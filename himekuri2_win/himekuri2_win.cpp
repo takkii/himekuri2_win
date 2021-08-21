@@ -87,15 +87,18 @@ int main(void)
         cout << himekuri << endl;
 
         // C++ version info.
-        long cpp17 = 201703L;
-        long cpp14 = 201402L;
-        long cpp11 = 201103L;
-        long cpp98 = 199711L;
+        int cpp20 = 202002;
+        int cpp17 = 201703;
+        int cpp14 = 201402;
+        int cpp11 = 201103;
+        int cpp98 = 199711;
 
-        // long type → string type.
-        string cpp_ver = to_string(__cplusplus);
+        // int type → string type changes.
+        string cpp_ver = to_string(_MSVC_LANG);
 
-        if (cpp_ver.compare(to_string(cpp17)) == 0)
+        if (cpp_ver.compare(to_string(cpp20)) == 0)
+            cout << "現在の C++ : C++20" << endl;
+        else if (cpp_ver.compare(to_string(cpp17)) == 0)
             cout << "現在の C++ : C++17" << endl;
         else if (cpp_ver.compare(to_string(cpp14)) == 0)
             cout << "現在の C++ : C++14" << endl;
