@@ -106,13 +106,9 @@ int main(void)
         else
             cout << "現在の C++ : pre-standard C++" << endl;
 
-        return 0;
     } catch (runtime_error& e) {
         cerr << e.what() << endl;
         throw;
-    } catch (exception& e) {
-        cerr << "exceptionを継承した例外オブジェクトが送出された" << endl;
-    }
+    } 
+    quick_exit(0);
 }
-
-
