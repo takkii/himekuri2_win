@@ -63,6 +63,10 @@ int main(void)
         struct tm* t_st;
         const char* wday[] = { "日", "月", "火", "水", "木", "金", "土" };
 
+        // Month 和風月
+        const char* wmonth[] = { "睦月", "如月", "弥生", "卯月", "皐月", "水無月", "文月", "葉月", "長月", "神無月", "霜月", "師走"
+        };
+
         time(&timer);
         t_st = localtime(&timer);
 
@@ -81,7 +85,7 @@ int main(void)
 
         string himekuri = number + comma + str_num + number_comma + str_dd;
 
-        cout << tim << comma << result << comma << wday[t_st->tm_wday] << week << endl;
+        cout << tim << comma << result << comma << wday[t_st->tm_wday] << week << comma << wmonth[t_st->tm_mon] << endl;
         cout << gantan << comma << redays_mini << aisatu << endl;
         cout << result_reiwa << comma << result_r << endl;
         cout << himekuri << endl;
