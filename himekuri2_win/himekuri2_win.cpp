@@ -114,8 +114,10 @@ int main(void)
             cout << "現在の C++ : pre-standard C++" << endl;
 
     } catch (runtime_error& e) {
-        cerr << e.what() << endl;
-        throw;
-    } 
+        cout << "caught exception : " << e.what() << endl;
+    }
+    catch (exception& e) {
+        cout << "some exception : " << e.what() << endl;
+    }
     quick_exit(0);
 }
