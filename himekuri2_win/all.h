@@ -10,7 +10,6 @@
 #include <typeinfo>
 #include <exception>
 #include <initializer_list>
-// #include <cstdalign>
 #include <stdexcept>
 #include <cassert>
 #include <cerrno>
@@ -62,5 +61,12 @@
 #include <condition_variable>
 #include <future>
 
+#include <boost/range/adaptor/filtered.hpp>
+#include <boost/range/irange.hpp>
+#include <boost/range/algorithm/copy.hpp>
+
 using namespace std::literals;
 using namespace std;
+
+using namespace boost;
+using namespace boost::adaptors;
