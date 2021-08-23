@@ -116,8 +116,11 @@ int main(void)
     } catch (runtime_error& e) {
         cout << "caught exception : " << e.what() << endl;
     }
-    catch (exception& e) {
-        cout << "some exception : " << e.what() << endl;
-    }
     quick_exit(0);
 }
+
+// cd GitHub/himekuri2_win/himekuri2_win
+// mkdir build && cd build
+// conan install ..
+// cp ./conanbuildinfo.props ../conanbuildinfo.props 
+// conan remove --locks
