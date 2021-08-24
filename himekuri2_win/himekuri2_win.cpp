@@ -118,9 +118,3 @@ int main(void)
     }
     quick_exit(0);
 }
-
-// cd GitHub/himekuri2_win/himekuri2_win
-// mkdir build && cd build
-// conan install ..
-// cp ./conanbuildinfo.props ../conanbuildinfo.props 
-// conan remove --locks
