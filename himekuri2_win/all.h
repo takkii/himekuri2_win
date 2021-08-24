@@ -64,9 +64,13 @@
 #include <boost/range/adaptor/filtered.hpp>
 #include <boost/range/irange.hpp>
 #include <boost/range/algorithm/copy.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 using namespace std::literals;
 using namespace std;
 
 using namespace boost;
 using namespace boost::adaptors;
+using namespace boost::gregorian;
+using namespace boost::posix_time;

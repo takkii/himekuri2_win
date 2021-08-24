@@ -28,24 +28,6 @@ int main(void)
 
         string result_reiwa = y.str();
 
-
-        stringstream z;
-        z << "20";
-        z << nowlt->tm_year - 100;
-        z << "年";
-        z << nowlt->tm_mon + 1;
-        z << "月";
-        z << nowlt->tm_mday;
-        z << "日" << " : ";
-        z << nowlt->tm_hour;
-        z << "時";
-        z << nowlt->tm_min;
-        z << "分";
-        z << nowlt->tm_sec;
-        z << "秒";
-
-        string result = z.str();
-
         // OneYear → 365 days.
         int OneYear_Days = 365;
 
@@ -85,10 +67,23 @@ int main(void)
 
         string himekuri = number + comma + str_num + number_comma + str_dd;
 
-        cout << tim << comma << result << comma << wday[t_st->tm_wday] << week << comma << wmonth[t_st->tm_mon] << endl;
-        cout << gantan << comma << redays_mini << aisatu << endl;
-        cout << result_reiwa << comma << result_r << endl;
-        cout << himekuri << endl;
+        const date today = day_clock::local_day();
+
+        auto facet = new time_facet("%Y年%m月%d日 : %H時%M分%S秒");
+        ss.imbue(locale(cout.getloc(), facet));
+        auto now_time = second_clock::local_time();
+        ss << now_time;
+        auto str_rep = (ss.str()).replace(0,1, "");
+
+        if (gregorian_calendar::is_leap_year(today.year())) {
+            cout << "今年はうるう年" << comma << today.year() << "年です!" << endl;
+        }
+        else {
+            cout << tim << comma << str_rep << comma << wday[t_st->tm_wday] << week << comma << wmonth[t_st->tm_mon] << endl;
+            cout << gantan << comma << redays_mini << aisatu << endl;
+            cout << result_reiwa << comma << result_r << endl;
+            cout << himekuri << endl;
+        }
 
         // C++ version info.
         int cpp20 = 202002;
