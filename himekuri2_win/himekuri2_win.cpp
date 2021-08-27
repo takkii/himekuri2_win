@@ -8,7 +8,7 @@ int main(void)
         const tm* nowlt = localtime(&now);
 
         stringstream x;
-        x << "R0";
+        x << "R";
         x << nowlt->tm_year - 118;
         x << ".";
         x << nowlt->tm_mon + 1;
