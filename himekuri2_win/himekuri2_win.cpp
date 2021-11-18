@@ -67,7 +67,7 @@ int main(void)
 
         auto himekuri = number + comma + str_num + number_comma + str_dd;
 
-        const date today = day_clock::local_day();
+        const auto today = day_clock::local_day();
 
         auto facet = new time_facet("%Y年%m月%d日 : %H時%M分%S秒");
         ss.imbue(locale(cout.getloc(), facet));
